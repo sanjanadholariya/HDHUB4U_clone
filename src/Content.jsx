@@ -7,8 +7,16 @@ const Content = ({ menuState }) => {
 
     const query = useRef("")
 
+    const handleSearch = (e) => {
+        e.preventDefault();
+        const searchQuery = query.current.value.trim();
+        if (searchQuery) {
+            getMovies(searchQuery);
+        }
+    }
+    
+
     const getMovies = (searchQuery) => {
-        // if (e) e.preventDefault();
         fetch(`https://api.themoviedb.org/3/search/movie?api_key=6bb6ecbbe908657ad66ad7be90c01ef9&query=${searchQuery}`)
             .then((data) => data.json())
             .then(res => {
@@ -54,7 +62,7 @@ const Content = ({ menuState }) => {
                 <h3 style={{ backgroundColor: "transparent" }}>
                     🎬🍿✨ Latest Releases....</h3>
 
-                <form onSubmit={getMovies}>
+                <form onSubmit={handleSearch}>
                     <input defaultValue="" ref={query} className="ps-2" placeholder="search here...." type="text" style={{ outline: "none", border: "none", height: "40px", width: "300px" }} />
 
                     <button type="submit" style={{ outline: "none", border: "grey", height: "40px", width: "100px", backgroundColor: "#890000" }}>Search</button>
