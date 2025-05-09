@@ -12,7 +12,6 @@ a{
 li {
   cursor: pointer;
 }
-/* Add this CSS globally or in your component's style file */
 .dropdown:hover .dropdown-menu {
   display: block;
 }

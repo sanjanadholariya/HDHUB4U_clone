@@ -1,7 +1,6 @@
 const header = [
     {
         menu: [
-            "Home",
             "Bollywood",
             "Hollywood",
             "Romance",

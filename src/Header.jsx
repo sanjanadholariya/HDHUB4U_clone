@@ -22,12 +22,13 @@ const Header = ({ headerData , setMenuState}) => {
                     </div>
                     <div className="col-9">
                         <ul className="d-flex  list-unstyled">
+                            <li>Home</li>
                             {
                                 headerData.menu.map((val, index) => {
                                     if (val.GENERs) {
                                         return (
                                             <li className="ms-5 dropdown position-relative" key={index}>
-                                                GENERs
+                                                GENERs 👇🏻
                                                 <ul className="dropdown-menu">
                                                     {val.GENERs.map((gen, id) => (
                                                         <li className="dropdown-item" key={id}>
@@ -41,7 +42,9 @@ const Header = ({ headerData , setMenuState}) => {
                                     }
                                     else {
                                         return (
+                                            
                                             <li key={index} className="ms-4">
+                                                
                                                 {/* <a onClick={() => menuClick(val)} href="">{val}</a> */}
                                                 {/* <link rel="stylesheet" href="" onClick={() => menuClick(val)} />{val} */}
                                                 <button onClick={() => menuClick(val)}>{val}</button>
